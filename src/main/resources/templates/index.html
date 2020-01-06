@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Logement Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Liste des logements</h1>
+    <a href="/new">Creer un nouveau Logement</a>
+    <br/><br/>
+    <table border="1" cellpadding="10" modelAttribute="logement">
+        <thead>
+            <tr>
+                <th>Logement ID</th>
+                <th>Etat</th>
+                <th>Prix</th>
+                <th>Adresse</th>
+                <th>NbreChambre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="logement : ${listLogements}" modelAttribute="logement">
+                <td name="id" th:text="${logement.id}">Logement ID</td>
+                <td th:text="${logement.etat}">etat</td>
+                <td th:text="${logement.prix}">prix</td>
+                <td th:text="${logement.adresse}">adresse</td>
+                <td th:text="${logement.nbreChambre}">nbreChambre</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${logement.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${logement.id}}">Delete</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/newContrat/' + ${logement.id}}">Allouer</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>

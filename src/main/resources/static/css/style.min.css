@@ -1,0 +1,29 @@
+body{
+	background-color: #ffffe6;
+}
+
+.card-header{
+	background-color: #42bcf4;
+}
+
+.spacer{
+	margin-top: 40px;
+}
+
+.red{
+	color: red;
+	font-weight: bold;
+}
+
+input{
+	border-radius: 10px;
+}
+
+.btn{
+	border-radius: 15px;
+}
+
+.card{
+	margin-bottom: 7px;
+	margin-top: 7px;
+}

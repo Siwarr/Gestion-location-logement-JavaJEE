@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Editer contrat</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Editer contrat</h1>
+        <br />
+        <form action="#" th:action="@{/saveC}" th:object="${contrat}"
+            method="post" modelAttribute="contrat">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td>contrat ID:</td>
+                    <td>
+                        <input type="text" name="id" th:field="*{idC}" readonly="readonly" />
+                    </td>
+                </tr>        
+                <tr>             
+                    <td>Contrat etat:</td>
+                    <td>
+                        <input type="text" th:field="*{etat}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Adresse:</td>
+                    <td><input type="text" th:field="*{adresse}" /></td>
+                </tr>
+                <tr>
+                    <td>Prix:</td>
+                    <td><input type="text" th:field="*{prix}" /></td>
+                </tr>
+                <tr>
+                    <td>Nbre de Chambres:</td>
+                    <td><input type="text" th:field="*{nbreChambre}" /></td>
+                </tr>
+                <tr>
+                    <td>Date debut:</td>
+                    <td><input type="text" th:field="*{dateDebut}" /></td>
+                </tr>
+                 <tr>
+                    <td>Duree:</td>
+                    <td><input type="text" th:field="*{duree}" /></td>
+                </tr>   
+                 <tr>
+                    <td>CIN client:</td>
+                    <td><input type="text" th:field="*{CIN}" /></td>
+                </tr>   
+                                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
